@@ -1,5 +1,5 @@
 //
-//  MainTableViewController.swift
+//  JapanTableViewController.swift
 //  COVID-19
 //
 //  Created by 西田翔平 on 2020/02/15.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class MainTableViewController: UITableViewController {
+class JapanTableViewController: UITableViewController {
     
     var db: Firestore!
     let dataTypeLabelList = ["感染者数", "死亡者数", "回復者数"]
@@ -56,9 +56,9 @@ class MainTableViewController: UITableViewController {
     }
 }
 
-extension MainTableViewController {
+extension JapanTableViewController {
     func loadData() {
-        db.collection("overAll").getDocuments() {(snapshot, error) in
+        db.collection("Japan").getDocuments() {(snapshot, error) in
             if error != nil {
                 print("error")
             } else {
@@ -74,7 +74,6 @@ extension MainTableViewController {
                                 self.numberLabelList.append(deadString)
                                 self.numberLabelList.append(recoveredString)
                                 self.tableView.reloadData()
-                                
                             }
                         }
                     }

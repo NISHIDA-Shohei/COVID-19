@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DTf-fw-ylq">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,10 +10,12 @@
         <scene sceneID="Ml6-OP-aIs">
             <objects>
                 <tabBarController id="DTf-fw-ylq" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rW3-j4-0Zg">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rW3-j4-0Zg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="nuH-Qg-0c4" kind="relationship" relationship="viewControllers" id="Yd8-x7-jwX"/>
@@ -29,11 +31,17 @@
         <scene sceneID="New-dE-zYf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nuH-Qg-0c4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="全世界" id="ruL-lE-Dcz"/>
+                    <tabBarItem key="tabBarItem" title="全世界" image="globe" catalog="system" selectedImage="globe" id="ruL-lE-Dcz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1Dp-QI-ebU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="1Dp-QI-ebU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -44,46 +52,77 @@
             </objects>
             <point key="canvasLocation" x="-291.304347826087" y="610.71428571428567"/>
         </scene>
-        <!--新型コロナウイルス-->
+        <!--全世界発生状況-->
         <scene sceneID="FKb-Od-Wbg">
             <objects>
                 <tableViewController id="tcf-A7-Z2o" customClass="MainTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WaF-l9-Muq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WaF-l9-Muq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="r5O-Lp-anu">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r5O-Lp-anu" id="nqG-bF-MdO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
                             <outlet property="dataSource" destination="tcf-A7-Z2o" id="ob1-PX-aIA"/>
                             <outlet property="delegate" destination="tcf-A7-Z2o" id="5lf-Cy-rnE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新型コロナウイルス" id="fTh-cF-uj9"/>
+                    <navigationItem key="navigationItem" title="全世界発生状況" id="fTh-cF-uj9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUn-F0-nTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-291" y="1323"/>
         </scene>
+        <!--日本国内発生状況-->
+        <scene sceneID="0vi-FL-Oop">
+            <objects>
+                <tableViewController id="hYb-ZY-9y1" customClass="JapanTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PlZ-Gq-lGM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="hYb-ZY-9y1" id="7zI-Bj-2FA"/>
+                            <outlet property="delegate" destination="hYb-ZY-9y1" id="PcT-MU-5qK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="日本国内発生状況" id="wFB-vJ-m2T"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aON-1V-iXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="1323"/>
+        </scene>
+        <!--国別感染者数-->
+        <scene sceneID="AfT-k9-Sdd">
+            <objects>
+                <tableViewController id="xhZ-IP-TJk" customClass="WorldWideTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kXc-qs-RIV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="xhZ-IP-TJk" id="mog-93-6Ph"/>
+                            <outlet property="delegate" destination="xhZ-IP-TJk" id="xW8-z7-aFb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="国別感染者数" id="pBD-7U-kmS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpo-2X-nNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1458" y="1323"/>
+        </scene>
         <!--日本国内-->
         <scene sceneID="leI-Cw-Ihb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9kp-hb-FIa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="日本国内" id="eLu-4d-g19"/>
+                    <tabBarItem key="tabBarItem" title="日本国内" image="smallcircle.fill.circle" catalog="system" selectedImage="smallcircle.fill.circle" id="eLu-4d-g19"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ayY-xc-gkw">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="ayY-xc-gkw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hYb-ZY-9y1" kind="relationship" relationship="rootViewController" id="ywy-HG-xbR"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3l-d4-aSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,17 +132,25 @@
         <scene sceneID="AxI-xS-lzK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HDt-DP-xXV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="全世界国別" id="B8e-Ch-LkL"/>
+                    <tabBarItem key="tabBarItem" title="全世界国別" image="square.split.2x2" catalog="system" selectedImage="square.split.2x2" id="B8e-Ch-LkL"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GSa-Pw-QgD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="GSa-Pw-QgD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xhZ-IP-TJk" kind="relationship" relationship="rootViewController" id="DMv-hV-b9A"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D7-Mc-d1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1457.9710144927537" y="610.71428571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="64" height="60"/>
+        <image name="smallcircle.fill.circle" catalog="system" width="64" height="60"/>
+        <image name="square.split.2x2" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
