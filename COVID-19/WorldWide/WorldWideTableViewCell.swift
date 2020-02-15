@@ -10,7 +10,7 @@ import UIKit
 
 class WorldWideTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var view: UIView!
 

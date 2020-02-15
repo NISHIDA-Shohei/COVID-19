@@ -14,10 +14,14 @@ class JapanTableViewController: UITableViewController {
     var db: Firestore!
     let dataTypeLabelList = ["感染者数", "死亡者数", "回復者数"]
     var numberLabelList:[String] = []
+    
+    var placeLabelList:[String] = []
+    var detailNumberLabelList:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
+        tableView.register(UINib(nibName: "WorldWideTableViewCell", bundle: nil), forCellReuseIdentifier: "WorldWideTableViewCell")
     
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
@@ -30,29 +34,59 @@ class JapanTableViewController: UITableViewController {
         loadData()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return nil
+        } else {
+            return "詳細情報"
+        }
+    }
+    
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberLabelList.count
+        if section == 0 {
+            return numberLabelList.count
+        } else {
+            return placeLabelList.count
+        }
+        
      }
     
     // cellの情報を書き込む関数
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
-        cell.tag = indexPath.row
-        if cell.tag == 0 {
-            cell.numberLabel.textColor = UIColor.white
-        } else if cell.tag == 1 {
-            cell.numberLabel.textColor = UIColor.red
-        } else if cell.tag == 2 {
-            cell.numberLabel.textColor = UIColor.green
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
+            cell.tag = indexPath.row
+            if cell.tag == 0 {
+                cell.numberLabel.textColor = UIColor.white
+            } else if cell.tag == 1 {
+                cell.numberLabel.textColor = UIColor.red
+            } else if cell.tag == 2 {
+                cell.numberLabel.textColor = UIColor.green
+            }
+            cell.dataTypeLabel.text = dataTypeLabelList[indexPath.row]
+            cell.numberLabel.text = numberLabelList[indexPath.row]
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WorldWideTableViewCell", for: indexPath) as! WorldWideTableViewCell
+            cell.placeNameLabel.text = placeLabelList[indexPath.row]
+            cell.numberLabel.text = detailNumberLabelList[indexPath.row]
+            return cell
         }
-        cell.dataTypeLabel.text = dataTypeLabelList[indexPath.row]
-        cell.numberLabel.text = numberLabelList[indexPath.row]
         
-        return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        if indexPath.section == 0 {
+            return 140
+        } else {
+            return 120
+        }
+        
     }
 }
 
@@ -75,6 +109,26 @@ extension JapanTableViewController {
                                 self.numberLabelList.append(recoveredString)
                                 self.tableView.reloadData()
                             }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        db.collection("JapanDetail").order(by: "cases", descending: true).getDocuments() {(snapshot, error) in
+            if error != nil {
+                print("error")
+            } else {
+                self.placeLabelList = []
+                self.detailNumberLabelList = []
+                for document in (snapshot?.documents)! {
+                    if let place = document.data()["place"] as? String {
+                        if let cases = document.data()["cases"] as? Int {
+                            let casesString = String(cases.withComma)
+                            self.placeLabelList.append(place)
+                            self.detailNumberLabelList.append(casesString)
+                            self.tableView.reloadData()
                         }
                     }
                 }

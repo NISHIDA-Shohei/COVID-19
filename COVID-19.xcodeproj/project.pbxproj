@@ -16,10 +16,9 @@
 		B629604E23F6D99400E992CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B629604C23F6D99400E992CF /* LaunchScreen.storyboard */; };
 		B629605923F6D99500E992CF /* COVID_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629605823F6D99500E992CF /* COVID_19Tests.swift */; };
 		B629606423F6D99500E992CF /* COVID_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629606323F6D99500E992CF /* COVID_19UITests.swift */; };
+		B629608623F83BA400E992CF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629608523F83BA400E992CF /* MainTableViewCell.swift */; };
+		B629608823F83BAC00E992CF /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B629608723F83BAC00E992CF /* MainTableViewCell.xib */; };
 		B6ECCDE423F77F3B00F47F0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6ECCDE323F77F3B00F47F0D /* GoogleService-Info.plist */; };
-		B6ECCDE723F782B000F47F0D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDE623F782B000F47F0D /* MainTableViewController.swift */; };
-		B6ECCDEA23F78CCC00F47F0D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDE823F78CCC00F47F0D /* MainTableViewCell.swift */; };
-		B6ECCDEB23F78CCC00F47F0D /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6ECCDE923F78CCC00F47F0D /* MainTableViewCell.xib */; };
 		B6ECCDEE23F7B05600F47F0D /* JapanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDED23F7B05600F47F0D /* JapanTableViewController.swift */; };
 		B6ECCDF123F7B37B00F47F0D /* WorldWideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDF023F7B37B00F47F0D /* WorldWideTableViewController.swift */; };
 		B6ECCDF423F7B39500F47F0D /* WorldWideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDF223F7B39500F47F0D /* WorldWideTableViewCell.swift */; };
@@ -65,10 +64,9 @@
 		B629605F23F6D99500E992CF /* COVID-19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "COVID-19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B629606323F6D99500E992CF /* COVID_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID_19UITests.swift; sourceTree = "<group>"; };
 		B629606523F6D99500E992CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B629608523F83BA400E992CF /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		B629608723F83BAC00E992CF /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		B6ECCDE323F77F3B00F47F0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B6ECCDE623F782B000F47F0D /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		B6ECCDE823F78CCC00F47F0D /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		B6ECCDE923F78CCC00F47F0D /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		B6ECCDED23F7B05600F47F0D /* JapanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanTableViewController.swift; sourceTree = "<group>"; };
 		B6ECCDF023F7B37B00F47F0D /* WorldWideTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldWideTableViewController.swift; sourceTree = "<group>"; };
 		B6ECCDF223F7B39500F47F0D /* WorldWideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldWideTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				B629604723F6D99100E992CF /* Main.storyboard */,
 				B6ECCDEF23F7B30D00F47F0D /* WorldWide */,
 				B6ECCDEC23F7B02C00F47F0D /* Japan */,
-				B6ECCDE523F7827800F47F0D /* Main */,
 				B629604123F6D99100E992CF /* AppDelegate.swift */,
 				B629604323F6D99100E992CF /* SceneDelegate.swift */,
 				B629604A23F6D99400E992CF /* Assets.xcassets */,
@@ -172,16 +169,6 @@
 			path = "COVID-19UITests";
 			sourceTree = "<group>";
 		};
-		B6ECCDE523F7827800F47F0D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				B6ECCDE623F782B000F47F0D /* MainTableViewController.swift */,
-				B6ECCDE823F78CCC00F47F0D /* MainTableViewCell.swift */,
-				B6ECCDE923F78CCC00F47F0D /* MainTableViewCell.xib */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		B6ECCDEC23F7B02C00F47F0D /* Japan */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +183,8 @@
 				B6ECCDF023F7B37B00F47F0D /* WorldWideTableViewController.swift */,
 				B6ECCDF223F7B39500F47F0D /* WorldWideTableViewCell.swift */,
 				B6ECCDF323F7B39500F47F0D /* WorldWideTableViewCell.xib */,
+				B629608723F83BAC00E992CF /* MainTableViewCell.xib */,
+				B629608523F83BA400E992CF /* MainTableViewCell.swift */,
 			);
 			path = WorldWide;
 			sourceTree = "<group>";
@@ -322,12 +311,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B629608823F83BAC00E992CF /* MainTableViewCell.xib in Resources */,
 				B629604E23F6D99400E992CF /* LaunchScreen.storyboard in Resources */,
 				B6ECCDE423F77F3B00F47F0D /* GoogleService-Info.plist in Resources */,
 				B629604B23F6D99400E992CF /* Assets.xcassets in Resources */,
 				B6ECCDF523F7B39500F47F0D /* WorldWideTableViewCell.xib in Resources */,
 				B629604923F6D99100E992CF /* Main.storyboard in Resources */,
-				B6ECCDEB23F78CCC00F47F0D /* MainTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,12 +444,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6ECCDE723F782B000F47F0D /* MainTableViewController.swift in Sources */,
 				B6ECCDF423F7B39500F47F0D /* WorldWideTableViewCell.swift in Sources */,
 				B629604223F6D99100E992CF /* AppDelegate.swift in Sources */,
-				B6ECCDEA23F78CCC00F47F0D /* MainTableViewCell.swift in Sources */,
 				B6ECCDF123F7B37B00F47F0D /* WorldWideTableViewController.swift in Sources */,
 				B6ECCDEE23F7B05600F47F0D /* JapanTableViewController.swift in Sources */,
+				B629608623F83BA400E992CF /* MainTableViewCell.swift in Sources */,
 				B629604423F6D99100E992CF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
