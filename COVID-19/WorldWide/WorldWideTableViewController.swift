@@ -27,10 +27,10 @@ class WorldWideTableViewController: UITableViewController {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         loadData()
+        loadTitle()
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -107,6 +107,20 @@ class WorldWideTableViewController: UITableViewController {
 }
 
 extension WorldWideTableViewController {
+    
+    func loadTitle() {
+        db.collection("lastUpdated").getDocuments() {(snapshot, error) in
+            if error != nil {
+                print("error")
+            } else {
+                for document in (snapshot?.documents)! {
+                    if let lastUpdated = document.data()["lastUpdated"] as? String {
+                        self.navigationItem.title = "全世界 \(lastUpdated)"
+                    }
+                }
+            }
+        }
+    }
     func loadData() {
         db.collection("worldWide").order(by: "infected", descending: true).getDocuments() {(snapshot, error) in
             self.countryNameList = []

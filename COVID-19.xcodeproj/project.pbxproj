@@ -51,7 +51,7 @@
 		453D37165259F2E4FFB88E93 /* Pods-COVID-19-COVID-19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19-COVID-19UITests.debug.xcconfig"; path = "Target Support Files/Pods-COVID-19-COVID-19UITests/Pods-COVID-19-COVID-19UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DFD57807E5DF9F74F44A2E0 /* Pods-COVID-19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19.debug.xcconfig"; path = "Target Support Files/Pods-COVID-19/Pods-COVID-19.debug.xcconfig"; sourceTree = "<group>"; };
 		7DDB645434901D9C7FDBDEC1 /* Pods-COVID-19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19.release.xcconfig"; path = "Target Support Files/Pods-COVID-19/Pods-COVID-19.release.xcconfig"; sourceTree = "<group>"; };
-		B629603E23F6D99100E992CF /* COVID-19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID-19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B629603E23F6D99100E992CF /* 新型コロナ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新型コロナ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B629604123F6D99100E992CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B629604323F6D99100E992CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B629604823F6D99100E992CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		B629603F23F6D99100E992CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B629603E23F6D99100E992CF /* COVID-19.app */,
+				B629603E23F6D99100E992CF /* 新型コロナ.app */,
 				B629605423F6D99500E992CF /* COVID-19Tests.xctest */,
 				B629605F23F6D99500E992CF /* COVID-19UITests.xctest */,
 			);
@@ -221,7 +221,7 @@
 			);
 			name = "COVID-19";
 			productName = "COVID-19";
-			productReference = B629603E23F6D99100E992CF /* COVID-19.app */;
+			productReference = B629603E23F6D99100E992CF /* 新型コロナ.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B629605323F6D99500E992CF /* COVID-19Tests */ = {
@@ -631,7 +631,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "App.COVID-19";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "新型コロナ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -650,7 +650,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "App.COVID-19";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "新型コロナ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -24,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh7-lu-i3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="-132"/>
+            <point key="canvasLocation" x="-87" y="-118"/>
         </scene>
         <!--日本国内発生状況-->
         <scene sceneID="0vi-FL-Oop">
@@ -35,13 +35,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="SystemDarkBackground"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="78a-Cv-C1f">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KUD-8e-9Z6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <string key="text">データの出典元 世界保健機関（WHO）https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports 厚生労働省https://www.mhlw.go.jp/stf/houdou/index.html</string>
+                                    <mutableString key="text">データの出典元 ジョンズ・ホプキンズ大学https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 世界保健機関（WHO）https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports 厚生労働省https://www.mhlw.go.jp/stf/houdou/index.html  本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。</mutableString>
                                     <color key="textColor" name="SystemReverseBackground"/>
                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -65,7 +65,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aON-1V-iXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="569.56521739130437" y="1322.5446428571429"/>
+            <point key="canvasLocation" x="289.85507246376812" y="1322.5446428571429"/>
         </scene>
         <!--全世界発生状況-->
         <scene sceneID="AfT-k9-Sdd">
@@ -76,13 +76,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="SystemDarkBackground"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="F6v-ap-Qsm">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-jK-aez">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <string key="text">データの出典元 世界保健機関（WHO）https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports 厚生労働省https://www.mhlw.go.jp/stf/houdou/index.html</string>
+                                    <mutableString key="text">データの出典元 ジョンズ・ホプキンズ大学https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 世界保健機関（WHO）https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports 厚生労働省https://www.mhlw.go.jp/stf/houdou/index.html  本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。</mutableString>
                                     <color key="textColor" name="SystemReverseBackground"/>
                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -106,7 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpo-2X-nNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457.9710144927537" y="1322.5446428571429"/>
+            <point key="canvasLocation" x="-478.26086956521743" y="1322.5446428571429"/>
         </scene>
         <!--日本国内-->
         <scene sceneID="leI-Cw-Ihb">
@@ -125,7 +125,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3l-d4-aSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="611"/>
+            <point key="canvasLocation" x="291" y="611"/>
         </scene>
         <!--全世界-->
         <scene sceneID="AxI-xS-lzK">
@@ -144,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D7-Mc-d1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457.9710144927537" y="610.71428571428567"/>
+            <point key="canvasLocation" x="-477" y="611"/>
         </scene>
     </scenes>
     <resources>

@@ -28,10 +28,9 @@ class JapanTableViewController: UITableViewController {
         db = Firestore.firestore()
         
         loadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        loadData()
+        loadTitle()
+        
+        navigationItem.title = "aaa"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,6 +43,24 @@ class JapanTableViewController: UITableViewController {
         } else {
             return "詳細情報"
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else {
+            return 40
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        //labelの色
+        view.tintColor = UIColor(named: "SystemDarkBackground")
+        view.alpha = 0.95
+        let header = view as! UITableViewHeaderFooterView
+        //labelの文字の色
+        header.textLabel?.textColor = UIColor(named: "SystemReverseBackground")
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +91,7 @@ class JapanTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "WorldWideTableViewCell", for: indexPath) as! WorldWideTableViewCell
             cell.placeNameLabel.text = placeLabelList[indexPath.row]
             cell.numberLabel.text = detailNumberLabelList[indexPath.row]
+            cell.numberLabel.textColor = UIColor.white
             return cell
         }
         
@@ -91,6 +109,20 @@ class JapanTableViewController: UITableViewController {
 }
 
 extension JapanTableViewController {
+    
+    func loadTitle() {
+        db.collection("lastUpdated").getDocuments() {(snapshot, error) in
+            if error != nil {
+                print("error")
+            } else {
+                for document in (snapshot?.documents)! {
+                    if let lastUpdated = document.data()["lastUpdated"] as? String {
+                        self.navigationItem.title = "日本国内 \(lastUpdated)"
+                    }
+                }
+            }
+        }
+    }
     func loadData() {
         db.collection("Japan").getDocuments() {(snapshot, error) in
             if error != nil {
