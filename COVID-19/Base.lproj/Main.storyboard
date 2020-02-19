@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,28 +21,45 @@
                     <connections>
                         <segue destination="HDt-DP-xXV" kind="relationship" relationship="viewControllers" id="VC7-Qd-JW0"/>
                         <segue destination="9kp-hb-FIa" kind="relationship" relationship="viewControllers" id="3HO-Tg-6Q3"/>
+                        <segue destination="NfU-DO-pg0" kind="relationship" relationship="viewControllers" id="My7-1N-QhP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh7-lu-i3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-87" y="-118"/>
         </scene>
-        <!--日本国内発生状況-->
+        <!--国内 新型コロナ感染状況-->
         <scene sceneID="0vi-FL-Oop">
             <objects>
-                <tableViewController id="hYb-ZY-9y1" customClass="JapanTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hYb-ZY-9y1" customClass="JapanTableViewController" customModule="新コロナ情報" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PlZ-Gq-lGM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="SystemDarkBackground"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="78a-Cv-C1f">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="M2W-WN-7zN">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KUD-8e-9Z6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW5-in-3Lw">
+                                    <rect key="frame" x="357" y="3" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="SystemDarkBackground"/>
+                            <constraints>
+                                <constraint firstItem="uW5-in-3Lw" firstAttribute="centerY" secondItem="M2W-WN-7zN" secondAttribute="centerY" id="CbS-hL-XNC"/>
+                                <constraint firstAttribute="trailing" secondItem="uW5-in-3Lw" secondAttribute="trailing" constant="15" id="Rny-3j-er3"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="7VX-L7-XQF">
+                            <rect key="frame" x="0.0" y="127" width="414" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。 詳しくは本アプリの利用規約(http://ibdpblog.com/archives/1094)をご確認ください。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pOY-s4-zaD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <mutableString key="text">データの出典元 ジョンズ・ホプキンズ大学https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 世界保健機関（WHO）https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports 厚生労働省https://www.mhlw.go.jp/stf/houdou/index.html  本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。</mutableString>
                                     <color key="textColor" name="SystemReverseBackground"/>
                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -50,39 +68,68 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="KUD-8e-9Z6" firstAttribute="leading" secondItem="78a-Cv-C1f" secondAttribute="leading" id="Ccw-xk-AsH"/>
-                                <constraint firstItem="KUD-8e-9Z6" firstAttribute="top" secondItem="78a-Cv-C1f" secondAttribute="top" id="LUi-P4-fli"/>
-                                <constraint firstAttribute="trailing" secondItem="KUD-8e-9Z6" secondAttribute="trailing" id="OPq-rA-amB"/>
-                                <constraint firstAttribute="bottom" secondItem="KUD-8e-9Z6" secondAttribute="bottom" id="aqI-Je-geq"/>
+                                <constraint firstAttribute="trailing" secondItem="pOY-s4-zaD" secondAttribute="trailing" id="Klw-3g-cF1"/>
+                                <constraint firstAttribute="bottom" secondItem="pOY-s4-zaD" secondAttribute="bottom" id="QS1-lh-Wyw"/>
+                                <constraint firstItem="pOY-s4-zaD" firstAttribute="leading" secondItem="7VX-L7-XQF" secondAttribute="leading" id="StG-mh-WyP"/>
+                                <constraint firstItem="pOY-s4-zaD" firstAttribute="top" secondItem="7VX-L7-XQF" secondAttribute="top" id="pB9-1d-fx4"/>
                             </constraints>
                         </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tvN-cV-tSu">
+                                <rect key="frame" x="0.0" y="55" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tvN-cV-tSu" id="U5v-tQ-Eb3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="hYb-ZY-9y1" id="7zI-Bj-2FA"/>
                             <outlet property="delegate" destination="hYb-ZY-9y1" id="PcT-MU-5qK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="日本国内発生状況" id="wFB-vJ-m2T"/>
+                    <navigationItem key="navigationItem" title="国内 新型コロナ感染状況" id="wFB-vJ-m2T"/>
+                    <connections>
+                        <outlet property="lastUpdatedLabel" destination="uW5-in-3Lw" id="9KQ-0V-XK0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aON-1V-iXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="289.85507246376812" y="1322.5446428571429"/>
         </scene>
-        <!--全世界発生状況-->
+        <!--全世界 新型コロナ感染状況-->
         <scene sceneID="AfT-k9-Sdd">
             <objects>
-                <tableViewController id="xhZ-IP-TJk" customClass="WorldWideTableViewController" customModule="COVID_19" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xhZ-IP-TJk" customClass="WorldWideTableViewController" customModule="新コロナ情報" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kXc-qs-RIV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="SystemDarkBackground"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="F6v-ap-Qsm">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Fjj-WJ-ogT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-jK-aez">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2R-zv-Q8W">
+                                    <rect key="frame" x="357" y="3" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="SystemDarkBackground"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="A2R-zv-Q8W" secondAttribute="trailing" constant="15" id="QFN-kR-Dnx"/>
+                                <constraint firstItem="A2R-zv-Q8W" firstAttribute="centerY" secondItem="Fjj-WJ-ogT" secondAttribute="centerY" id="iQl-rd-fN3"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="F6v-ap-Qsm">
+                            <rect key="frame" x="0.0" y="127" width="414" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。 詳しくは本アプリの利用規約(http://ibdpblog.com/archives/1094)をご確認ください。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-jK-aez">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <mutableString key="text">データの出典元 ジョンズ・ホプキンズ大学https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 世界保健機関（WHO）https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports 厚生労働省https://www.mhlw.go.jp/stf/houdou/index.html  本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。</mutableString>
                                     <color key="textColor" name="SystemReverseBackground"/>
                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -97,12 +144,26 @@
                                 <constraint firstAttribute="trailing" secondItem="sPw-jK-aez" secondAttribute="trailing" id="hEZ-Ln-Wkh"/>
                             </constraints>
                         </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QIe-7u-WkT">
+                                <rect key="frame" x="0.0" y="55" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QIe-7u-WkT" id="jDI-vy-HN4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xhZ-IP-TJk" id="mog-93-6Ph"/>
                             <outlet property="delegate" destination="xhZ-IP-TJk" id="xW8-z7-aFb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="全世界発生状況" id="pBD-7U-kmS"/>
+                    <navigationItem key="navigationItem" title="全世界 新型コロナ感染状況" id="pBD-7U-kmS"/>
+                    <connections>
+                        <outlet property="lastUpdatedLabel" destination="A2R-zv-Q8W" id="4ha-Vs-jS1"/>
+                        <segue destination="KqH-7i-5YN" kind="modal" identifier="tutorialSegue" modalPresentationStyle="fullScreen" id="hHi-IM-ibb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpo-2X-nNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +188,207 @@
             </objects>
             <point key="canvasLocation" x="291" y="611"/>
         </scene>
+        <!--新型コロナ　基本情報-->
+        <scene sceneID="E1j-6W-0xg">
+            <objects>
+                <tableViewController id="IIs-Py-z9Q" customClass="InformationTableViewController" customModule="新コロナ情報" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c5i-vE-BQe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="SystemDarkBackground"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="EkC-tX-dwV">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpG-K1-kld">
+                                    <rect key="frame" x="357" y="3" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="SystemDarkBackground"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="qpG-K1-kld" secondAttribute="trailing" constant="15" id="Fcy-yB-hkF"/>
+                                <constraint firstItem="qpG-K1-kld" firstAttribute="centerY" secondItem="EkC-tX-dwV" secondAttribute="centerY" id="hXz-fS-Q2G"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="cco-be-dA2">
+                            <rect key="frame" x="0.0" y="127" width="414" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="本アプリは表示されているデータの正確性を保証するものではございません。本アプリによって生じた損害の保証の一切を放棄します。 詳しくは本アプリの利用規約(http://ibdpblog.com/archives/1094)をご確認ください。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rfR-Vp-N8E">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="textColor" name="SystemReverseBackground"/>
+                                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="rfR-Vp-N8E" secondAttribute="trailing" id="76P-UX-F6L"/>
+                                <constraint firstItem="rfR-Vp-N8E" firstAttribute="leading" secondItem="cco-be-dA2" secondAttribute="leading" id="7y2-af-Sqp"/>
+                                <constraint firstAttribute="bottom" secondItem="rfR-Vp-N8E" secondAttribute="bottom" id="M47-ge-tOD"/>
+                                <constraint firstItem="rfR-Vp-N8E" firstAttribute="top" secondItem="cco-be-dA2" secondAttribute="top" id="xiG-Ne-V0K"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Dl-gG-fzn">
+                                <rect key="frame" x="0.0" y="55" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Dl-gG-fzn" id="Fco-ev-ODs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IIs-Py-z9Q" id="Y7v-LF-P37"/>
+                            <outlet property="delegate" destination="IIs-Py-z9Q" id="3s1-6S-99L"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="新型コロナ　基本情報" id="ZLj-ZY-BQR"/>
+                    <connections>
+                        <outlet property="lastUpdatedLabel" destination="qpG-K1-kld" id="lpI-Pe-NOs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYe-KG-Hue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076.8115942028987" y="1322.5446428571429"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="wLV-DY-nuh">
+            <objects>
+                <viewController id="KqH-7i-5YN" customClass="TutorialViewController" customModule="新コロナ情報" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VVz-H1-jcv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kkl-fU-dle">
+                                <rect key="frame" x="10" y="44" width="394" height="782"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">新コロナ情報アプリ　利用規約  新コロナ情報アプリをダウンロードして頂きありがとうございます。この利用規約（以下「本規約」とします。）は、新コロナ情報アプリの運営を行う新コロナ情報アプリ事務局（以下「当事務局」とします。）が提供する「新コロナ情報アプリ」（以下「本アプリ」とします。）と本アプリのサービス（以下「本サービス」とします。）の利用条件などを定めたものです。
+
+第１条　はじめに
+
+本アプリを利用する方（以下「利用者」とします。）は、本規約に同意しこれを遵守しなければなりません。本規約に同意しない場合は、本アプリの利用を中止してください。
+
+第２条　禁止行為
+
+本アプリを利用する際は、以下の行為を行うことを禁止します。該当者の本アプリの利用を停止する場合があります。
+
+（1）法令または公序良俗に違反する行為、及びそれらの行為を助長する行為
+
+（2）犯罪行為に関連する行為
+
+（3）本アプリのサーバーまたはネットワーク機能の破壊や妨害
+
+（4）本アプリのサービスの運営、維持、利用を妨害、または妨害するおそれのある行為
+
+（5）本サービスの削除または改変
+
+（6）本サービス又はコンテンツの提供のために使用されているソフトウェアのいずれかの解読、逆コンパイル、分解又はリバースエンジニアリング
+
+（7）当事務局、本アプリの他の利用者または第三者の知的財産権、肖像権、プライバシー権、名誉その他の権利または利益の侵害
+
+（9）その他、当事務局が不適切と判断する行為
+
+第３条　免責事項
+
+本アプリを利用する際は、以下の項目を承諾の上ご利用ください。
+
+1.当事務局は、本アプリに対し、以下の項目について一切の保証を行いません。
+
+（1）OSのバージョンアップやアプリケーションのアップデートにより、利用機器に不具合、誤作動や障害が生じないこと
+
+（2）本アプリの利用により、利用機器に不具合、誤作動や障害が生じないこと
+
+（3）本アプリが常に正しく機能すること
+
+（4）本アプリが永続して利用できること
+
+（5）本アプリの利用に中断またはエラーが発生しないこと
+
+（6）本アプリに表示されている情報が常に正確ということ
+
+2.当事務局は、本アプリの利用方法に関する個別のサポートは一切行いません。
+
+3.本サービスは、当事務局の都合で事前の予告なく変更、追加、中断、削除する場合がございます。
+
+4.当事務局は利用者が本アプリを利用したことまたは本アプリが利用できないことや、本アプリの情報によって利用者に生じた身体的、精神的、経済的損害を含むいかなる損害についてもその責任を負いません。
+
+5.本アプリの利用料は無料ですが、必要な端末機器、通信設備、通信料等の費用は利用者の負担とします。
+
+第４条　知的財産権
+
+本アプリ及びその複製物（プログラム・画像・ドキュメント等を含む）は、著作権法およびその他知的財産権に関する法律によって保護されており、著作権その他一切の権利は当事務局に属するものとします。利用者は、本規約に基づき本アプリに関する非独占的で譲渡不能の使用権のみが許諾されるものであり、本アプリ及びその複製物に関していかなる所有権、著作権その他の一切の権利を有するものではありません。
+
+第５条　第三者のリソース
+
+本サービスで表示している情報の全ては公的機関や大学より公表されている新型コロナウイルス（COVID-19）に関する情報を集計し、当事務局で編集し掲載しています。当事務局は第三者が公表したこれらの情報の信憑性、正確性、適合性、その他一切の権利に関して責任を負いません。
+
+第６条　準拠法・裁判管轄
+
+本規約の準拠法は日本法であり、本アプリに起因または関連して利用者と当事務局との間に生じた紛争については横浜地方裁判所を第一審の専属的合意管轄裁判所とします。
+
+第７条　規約の変更
+
+本規約は、予告なく変更されることがあります。変更について利用者に通知することは致しませんので、本アプリを利用する際は、随時最新の利用規約をご確認ください。
+
+新コロナ情報アプリ事務局
+
+令和２年２月１９日　制定</mutableString>
+                                <color key="textColor" name="SystemReverseBackground"/>
+                                <fontDescription key="fontDescription" name="AppleGothic" family="AppleGothic" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT8-SY-Zhs">
+                                <rect key="frame" x="166" y="826" width="82" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="同意する">
+                                    <color key="titleColor" name="SystemReverseBackground"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickOK" destination="KqH-7i-5YN" eventType="touchUpInside" id="RB9-WO-hSI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CT8-SY-Zhs" firstAttribute="centerX" secondItem="VVz-H1-jcv" secondAttribute="centerX" id="Q7f-Lx-xH0"/>
+                            <constraint firstItem="Kkl-fU-dle" firstAttribute="top" secondItem="IwG-4A-i31" secondAttribute="top" id="chq-g6-iMN"/>
+                            <constraint firstItem="IwG-4A-i31" firstAttribute="trailing" secondItem="Kkl-fU-dle" secondAttribute="trailing" constant="10" id="dXu-V5-QED"/>
+                            <constraint firstItem="Kkl-fU-dle" firstAttribute="leading" secondItem="IwG-4A-i31" secondAttribute="leading" constant="10" id="hsb-zB-3Qa"/>
+                            <constraint firstItem="CT8-SY-Zhs" firstAttribute="bottom" secondItem="IwG-4A-i31" secondAttribute="bottom" id="nkP-Ag-l2d"/>
+                            <constraint firstItem="CT8-SY-Zhs" firstAttribute="top" secondItem="Kkl-fU-dle" secondAttribute="bottom" id="yRQ-ya-1tT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IwG-4A-i31"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a3I-6z-EeZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGX-GK-e1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1438" y="1323"/>
+        </scene>
+        <!--基本情報-->
+        <scene sceneID="UEH-vG-wui">
+            <objects>
+                <navigationController id="NfU-DO-pg0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="基本情報" image="info.circle" catalog="system" selectedImage="info.circle" id="WdD-8Z-nAs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QOo-Qv-fYd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.33333333333334"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IIs-Py-z9Q" kind="relationship" relationship="rootViewController" id="dR6-Gu-sKZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVX-AN-YAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="611"/>
+        </scene>
         <!--全世界-->
         <scene sceneID="AxI-xS-lzK">
             <objects>
@@ -134,7 +396,7 @@
                     <tabBarItem key="tabBarItem" title="全世界" image="globe" catalog="system" selectedImage="globe" id="B8e-Ch-LkL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GSa-Pw-QgD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -149,6 +411,7 @@
     </scenes>
     <resources>
         <image name="globe" catalog="system" width="64" height="60"/>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="smallcircle.fill.circle" catalog="system" width="64" height="60"/>
         <namedColor name="SystemDarkBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -11,12 +11,16 @@ import Firebase
 
 class JapanTableViewController: UITableViewController {
     
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
+    
     var db: Firestore!
     let dataTypeLabelList = ["感染者数", "死亡者数", "回復者数"]
     var numberLabelList:[String] = []
     
     var placeLabelList:[String] = []
     var detailNumberLabelList:[String] = []
+    
+    let refreshCtl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +31,13 @@ class JapanTableViewController: UITableViewController {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
+        navigationController?.navigationBar.largeTitleTextAttributes = [.font : UIFont.boldSystemFont(ofSize: 27.0)]
+        
+        tableView.refreshControl = refreshCtl
+        refreshCtl.addTarget(self, action: #selector(WorldWideTableViewController.refresh(sender:)), for: .valueChanged)
+        
         loadData()
         loadTitle()
-        
-        navigationItem.title = "aaa"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,7 +111,12 @@ class JapanTableViewController: UITableViewController {
         } else {
             return 120
         }
-        
+    }
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        loadData()
+        loadTitle()
+        refreshCtl.endRefreshing()
     }
 }
 
@@ -117,7 +129,7 @@ extension JapanTableViewController {
             } else {
                 for document in (snapshot?.documents)! {
                     if let lastUpdated = document.data()["lastUpdated"] as? String {
-                        self.navigationItem.title = "日本国内 \(lastUpdated)"
+                        self.lastUpdatedLabel.text = lastUpdated
                     }
                 }
             }

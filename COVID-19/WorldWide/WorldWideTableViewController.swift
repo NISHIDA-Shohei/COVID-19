@@ -11,12 +11,19 @@ import Firebase
 
 class WorldWideTableViewController: UITableViewController {
     
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
+    
     var db: Firestore!
     var countryNameList:[String] = []
     var countryNumberList:[String] = []
     
     let dataTypeLabelList = ["感染者数", "死亡者数", "回復者数"]
     var overAllNumberList:[String] = []
+    
+    let refreshCtl = UIRefreshControl()
+    var observer: NSKeyValueObservation?
+    
+    let firstOpen = "false"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +35,26 @@ class WorldWideTableViewController: UITableViewController {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
+        navigationController?.navigationBar.largeTitleTextAttributes = [.font : UIFont.boldSystemFont(ofSize: 27.0)]
+        
         loadData()
         loadTitle()
         
+        tableView.refreshControl = refreshCtl
+        refreshCtl.addTarget(self, action: #selector(WorldWideTableViewController.refresh(sender:)), for: .valueChanged)
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+
+            if(launchedBefore == true) {
+                //donothing
+                //動作確認のために1回実行ごとに値をfalseに設定し直す
+                UserDefaults.standard.set(false, forKey: "launchedBefore")
+                //UserDefaults.standard.set(true, forKey: "launchedBefore")
+        
+            } else {
+                //起動を判定するlaunchedBeforeという論理型のKeyをUserDefaultsに用意
+                performSegue(withIdentifier: "tutorialSegue", sender: self)
+            }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,6 +128,12 @@ class WorldWideTableViewController: UITableViewController {
             return 120
         }
     }
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        loadData()
+        loadTitle()
+        refreshCtl.endRefreshing()
+    }
 }
 
 extension WorldWideTableViewController {
@@ -115,7 +145,7 @@ extension WorldWideTableViewController {
             } else {
                 for document in (snapshot?.documents)! {
                     if let lastUpdated = document.data()["lastUpdated"] as? String {
-                        self.navigationItem.title = "全世界 \(lastUpdated)"
+                        self.lastUpdatedLabel.text = lastUpdated
                     }
                 }
             }

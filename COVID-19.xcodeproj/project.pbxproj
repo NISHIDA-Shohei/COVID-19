@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		299903ED6BC153F4A1CB3000 /* Pods_COVID_19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0863532D17D4FA5C5DB54E69 /* Pods_COVID_19Tests.framework */; };
 		9E71E8F06E2DF433B11CC2E7 /* Pods_COVID_19_COVID_19UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE67F76C0802D90CF2E43332 /* Pods_COVID_19_COVID_19UITests.framework */; };
+		B61C3A0D23FD4943003F5E97 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61C3A0B23FD4943003F5E97 /* TutorialViewController.swift */; };
 		B629604223F6D99100E992CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629604123F6D99100E992CF /* AppDelegate.swift */; };
 		B629604423F6D99100E992CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629604323F6D99100E992CF /* SceneDelegate.swift */; };
 		B629604923F6D99100E992CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B629604723F6D99100E992CF /* Main.storyboard */; };
@@ -18,11 +19,14 @@
 		B629606423F6D99500E992CF /* COVID_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629606323F6D99500E992CF /* COVID_19UITests.swift */; };
 		B629608623F83BA400E992CF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629608523F83BA400E992CF /* MainTableViewCell.swift */; };
 		B629608823F83BAC00E992CF /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B629608723F83BAC00E992CF /* MainTableViewCell.xib */; };
-		B6ECCDE423F77F3B00F47F0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6ECCDE323F77F3B00F47F0D /* GoogleService-Info.plist */; };
 		B6ECCDEE23F7B05600F47F0D /* JapanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDED23F7B05600F47F0D /* JapanTableViewController.swift */; };
 		B6ECCDF123F7B37B00F47F0D /* WorldWideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDF023F7B37B00F47F0D /* WorldWideTableViewController.swift */; };
 		B6ECCDF423F7B39500F47F0D /* WorldWideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECCDF223F7B39500F47F0D /* WorldWideTableViewCell.swift */; };
 		B6ECCDF523F7B39500F47F0D /* WorldWideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6ECCDF323F7B39500F47F0D /* WorldWideTableViewCell.xib */; };
+		B6F732D523FB68E50007AD84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6F732D423FB68E50007AD84 /* GoogleService-Info.plist */; };
+		B6F732D923FC092C0007AD84 /* InformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F732D823FC092C0007AD84 /* InformationTableViewController.swift */; };
+		B6F732E223FC0C570007AD84 /* Pixel30TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F732E023FC0C570007AD84 /* Pixel30TableViewCell.swift */; };
+		B6F732E323FC0C570007AD84 /* Pixel30TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F732E123FC0C570007AD84 /* Pixel30TableViewCell.xib */; };
 		FA8C028008A649B3B1619369 /* Pods_COVID_19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E51544932A371E6C15547C7 /* Pods_COVID_19.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +55,8 @@
 		453D37165259F2E4FFB88E93 /* Pods-COVID-19-COVID-19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19-COVID-19UITests.debug.xcconfig"; path = "Target Support Files/Pods-COVID-19-COVID-19UITests/Pods-COVID-19-COVID-19UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DFD57807E5DF9F74F44A2E0 /* Pods-COVID-19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19.debug.xcconfig"; path = "Target Support Files/Pods-COVID-19/Pods-COVID-19.debug.xcconfig"; sourceTree = "<group>"; };
 		7DDB645434901D9C7FDBDEC1 /* Pods-COVID-19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19.release.xcconfig"; path = "Target Support Files/Pods-COVID-19/Pods-COVID-19.release.xcconfig"; sourceTree = "<group>"; };
-		B629603E23F6D99100E992CF /* 新型コロナ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新型コロナ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61C3A0B23FD4943003F5E97 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		B629603E23F6D99100E992CF /* 新コロナ情報.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新コロナ情報.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B629604123F6D99100E992CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B629604323F6D99100E992CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B629604823F6D99100E992CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,11 +71,14 @@
 		B629606523F6D99500E992CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B629608523F83BA400E992CF /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B629608723F83BAC00E992CF /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
-		B6ECCDE323F77F3B00F47F0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6ECCDED23F7B05600F47F0D /* JapanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanTableViewController.swift; sourceTree = "<group>"; };
 		B6ECCDF023F7B37B00F47F0D /* WorldWideTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldWideTableViewController.swift; sourceTree = "<group>"; };
 		B6ECCDF223F7B39500F47F0D /* WorldWideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldWideTableViewCell.swift; sourceTree = "<group>"; };
 		B6ECCDF323F7B39500F47F0D /* WorldWideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorldWideTableViewCell.xib; sourceTree = "<group>"; };
+		B6F732D423FB68E50007AD84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6F732D823FC092C0007AD84 /* InformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewController.swift; sourceTree = "<group>"; };
+		B6F732E023FC0C570007AD84 /* Pixel30TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel30TableViewCell.swift; sourceTree = "<group>"; };
+		B6F732E123FC0C570007AD84 /* Pixel30TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Pixel30TableViewCell.xib; sourceTree = "<group>"; };
 		DE2FB1BF66A568C41A79E475 /* Pods-COVID-19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-19Tests.debug.xcconfig"; path = "Target Support Files/Pods-COVID-19Tests/Pods-COVID-19Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE67F76C0802D90CF2E43332 /* Pods_COVID_19_COVID_19UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_COVID_19_COVID_19UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,7 +136,7 @@
 		B629603F23F6D99100E992CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B629603E23F6D99100E992CF /* 新型コロナ.app */,
+				B629603E23F6D99100E992CF /* 新コロナ情報.app */,
 				B629605423F6D99500E992CF /* COVID-19Tests.xctest */,
 				B629605F23F6D99500E992CF /* COVID-19UITests.xctest */,
 			);
@@ -141,12 +149,15 @@
 				B629604723F6D99100E992CF /* Main.storyboard */,
 				B6ECCDEF23F7B30D00F47F0D /* WorldWide */,
 				B6ECCDEC23F7B02C00F47F0D /* Japan */,
+				B6F732D823FC092C0007AD84 /* InformationTableViewController.swift */,
+				B6F732DB23FC0BD40007AD84 /* TableViewCell */,
+				B61C3A0B23FD4943003F5E97 /* TutorialViewController.swift */,
 				B629604123F6D99100E992CF /* AppDelegate.swift */,
 				B629604323F6D99100E992CF /* SceneDelegate.swift */,
 				B629604A23F6D99400E992CF /* Assets.xcassets */,
 				B629604C23F6D99400E992CF /* LaunchScreen.storyboard */,
 				B629604F23F6D99400E992CF /* Info.plist */,
-				B6ECCDE323F77F3B00F47F0D /* GoogleService-Info.plist */,
+				B6F732D423FB68E50007AD84 /* GoogleService-Info.plist */,
 			);
 			path = "COVID-19";
 			sourceTree = "<group>";
@@ -189,6 +200,15 @@
 			path = WorldWide;
 			sourceTree = "<group>";
 		};
+		B6F732DB23FC0BD40007AD84 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6F732E023FC0C570007AD84 /* Pixel30TableViewCell.swift */,
+				B6F732E123FC0C570007AD84 /* Pixel30TableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		B8F78E7EB10F882FA2BAAC71 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +241,7 @@
 			);
 			name = "COVID-19";
 			productName = "COVID-19";
-			productReference = B629603E23F6D99100E992CF /* 新型コロナ.app */;
+			productReference = B629603E23F6D99100E992CF /* 新コロナ情報.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B629605323F6D99500E992CF /* COVID-19Tests */ = {
@@ -313,10 +333,11 @@
 			files = (
 				B629608823F83BAC00E992CF /* MainTableViewCell.xib in Resources */,
 				B629604E23F6D99400E992CF /* LaunchScreen.storyboard in Resources */,
-				B6ECCDE423F77F3B00F47F0D /* GoogleService-Info.plist in Resources */,
+				B6F732E323FC0C570007AD84 /* Pixel30TableViewCell.xib in Resources */,
 				B629604B23F6D99400E992CF /* Assets.xcassets in Resources */,
 				B6ECCDF523F7B39500F47F0D /* WorldWideTableViewCell.xib in Resources */,
 				B629604923F6D99100E992CF /* Main.storyboard in Resources */,
+				B6F732D523FB68E50007AD84 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,9 +466,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ECCDF423F7B39500F47F0D /* WorldWideTableViewCell.swift in Sources */,
+				B61C3A0D23FD4943003F5E97 /* TutorialViewController.swift in Sources */,
+				B6F732D923FC092C0007AD84 /* InformationTableViewController.swift in Sources */,
 				B629604223F6D99100E992CF /* AppDelegate.swift in Sources */,
 				B6ECCDF123F7B37B00F47F0D /* WorldWideTableViewController.swift in Sources */,
 				B6ECCDEE23F7B05600F47F0D /* JapanTableViewController.swift in Sources */,
+				B6F732E223FC0C570007AD84 /* Pixel30TableViewCell.swift in Sources */,
 				B629608623F83BA400E992CF /* MainTableViewCell.swift in Sources */,
 				B629604423F6D99100E992CF /* SceneDelegate.swift in Sources */,
 			);
@@ -630,8 +654,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "App.COVID-19";
-				PRODUCT_NAME = "新型コロナ";
+				PRODUCT_NAME = "新コロナ情報";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -649,8 +674,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "App.COVID-19";
-				PRODUCT_NAME = "新型コロナ";
+				PRODUCT_NAME = "新コロナ情報";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
